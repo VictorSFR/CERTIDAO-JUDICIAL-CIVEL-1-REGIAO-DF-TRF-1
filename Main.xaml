@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="905,3252" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="905,3599" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
@@ -71,7 +71,6 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -79,14 +78,10 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Sequence Geral" sap:VirtualizedContainerService.HintSize="915,3087" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence Geral" sap:VirtualizedContainerService.HintSize="915,3434" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://sistemas.trf1.jus.br/certidao/#/" Name="siteUrl" />
-      <Variable x:TypeArguments="x:String" Name="pastaDownload">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\GLOBALRED 04\Desktop\TesteDownloadCertidoes\CERTIDAO JUDICIAL CIVEL 1 REGIAO DF TRF 1.pdf</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\GLOBALRED 04\Desktop\TesteDownloadCertidoes\CERTIDAO JUDICIAL CIVEL 1 REGIAO DF TRF 1.pdf" Name="pastaDownload" />
       <Variable x:TypeArguments="x:String" Default="06761839130" Name="cpf" />
       <Variable x:TypeArguments="x:String" Name="link" />
       <Variable x:TypeArguments="x:String" Name="condicao" />
@@ -101,43 +96,29 @@
         <OutArgument x:TypeArguments="x:String">[condicao]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <If Condition="[condicao.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="873,488" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[condicao.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="873,396" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,330" sap2010:WorkflowViewState.IdRef="Sequence_19">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="CPF" Title="Digite o CPF:">
-            <ui:InputDialog.Result>
-              <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
-            </ui:InputDialog.Result>
-          </ui:InputDialog>
-        </Sequence>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="CPF" Title="Digite o CPF:">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,330" sap2010:WorkflowViewState.IdRef="Sequence_20">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="CNPJ" Title="Digite o CNPJ:">
-            <ui:InputDialog.Result>
-              <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
-            </ui:InputDialog.Result>
-          </ui:InputDialog>
-        </Sequence>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="CNPJ" Title="Digite o CNPJ:">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
       </If.Else>
     </If>
-    <ui:OpenBrowser Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,1990" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Url="[siteUrl]">
+    <ui:OpenBrowser Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,2429" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Url="[siteUrl]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1889" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,2328" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,93 +136,70 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5081480a-3b74-4327-81fc-fe03963e945a" InformativeScreenshot="a39d775530915e8abbee4460829501bd" Selector="&lt;webctrl tag='MAT-CARD' innertext='SOLICITAR CERTIDÃOUtilize esse link para solicitar certidão' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5081480a-3b74-4327-81fc-fe03963e945a" InformativeScreenshot="a39d775530915e8abbee4460829501bd" Selector="&lt;webctrl tag='MAT-CARD' innertext='SOLICITAR CERTIDÃOUtilize esse link para solicitar certidão' /&gt;" TimeoutMS="10000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <If Condition="[condicao.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="797,300" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[condicao.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="797,217" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PessoaFisica'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_25" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2992f92f-99ca-40d9-abc5-ac0390bb4c0f" InformativeScreenshot="982140b6d5e930756fc2a562609ae1e4" Selector="&lt;webctrl aaname='CPF' parentid='mat-radio-*' tag='DIV' class='mat-radio-label-content' innertext=' CPF' parentclass='mat-radio-label' /&gt;" TimeoutMS="10000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PessoaFisica'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2992f92f-99ca-40d9-abc5-ac0390bb4c0f" InformativeScreenshot="982140b6d5e930756fc2a562609ae1e4" Selector="&lt;webctrl aaname='CPF' parentid='mat-radio-*' tag='DIV' class='mat-radio-label-content' innertext=' CPF' parentclass='mat-radio-label' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:Click>
-                </Sequence>
+                </ui:Click>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_26" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc12307c-de17-4cfd-93b1-51a7b3b434f9" InformativeScreenshot="541c47bb9df6004018f95f232f9011e5" Selector="&lt;webctrl aaname='CNPJ' parentid='mat-radio*' tag='DIV' innertext=' CNPJ' parentclass='mat-radio-label' /&gt;" TimeoutMS="10000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_24" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc12307c-de17-4cfd-93b1-51a7b3b434f9" InformativeScreenshot="541c47bb9df6004018f95f232f9011e5" Selector="&lt;webctrl aaname='CNPJ' parentid='mat-radio*' tag='DIV' innertext=' CNPJ' parentclass='mat-radio-label' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:Click>
-                </Sequence>
+                </ui:Click>
               </If.Else>
             </If>
-            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="797,1311" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="797,1833" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,10 +225,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58c84b40-ae1f-427e-8b87-5103b7468f17" InformativeScreenshot="2fc6953c038b8120d71d771a46d53014" Selector="&lt;webctrl parentid='mat-select*' tag='DIV' class='mat-select-arrow*' parentclass='mat-select-arrow-wrapper*' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58c84b40-ae1f-427e-8b87-5103b7468f17" InformativeScreenshot="2fc6953c038b8120d71d771a46d53014" Selector="&lt;webctrl parentid='mat-select*' tag='DIV' class='mat-select-arrow*' parentclass='mat-select-arrow-wrapper*' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -289,10 +244,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4748bb16-5a85-4857-9b58-a01b2eee1e3a" InformativeScreenshot="f9ba0f687a64e8bea777029f40278c77" Selector="&lt;webctrl parentid='mat-option*' tag='SPAN' aaname=' Cível ' class='mat-option-text' innertext=' Cível ' parentclass='mat-option*' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4748bb16-5a85-4857-9b58-a01b2eee1e3a" InformativeScreenshot="f9ba0f687a64e8bea777029f40278c77" Selector="&lt;webctrl parentid='mat-option*' tag='SPAN' aaname=' Cível ' class='mat-option-text' innertext=' Cível ' parentclass='mat-option*' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -311,10 +263,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06043cac-017b-4c5b-af98-8ed2c8ad7e9e" InformativeScreenshot="5329a3358eda06b0bbfadb5161d92642" Selector="&lt;webctrl tag='INPUT' aaname='Selecionar um órgão...' aria-role='combobox' class='mat-autocomplete-trigger*' id='mat-chip-list-input*' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06043cac-017b-4c5b-af98-8ed2c8ad7e9e" InformativeScreenshot="5329a3358eda06b0bbfadb5161d92642" Selector="&lt;webctrl tag='INPUT' aaname='Selecionar um órgão...' aria-role='combobox' class='mat-autocomplete-trigger*' id='mat-chip-list-input*' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -333,10 +282,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6537d680-4f0d-4378-af9b-48a30227c0ec" InformativeScreenshot="7ac0905ac83e09fce73fbeccb12ec6ef" Selector="&lt;webctrl parentid='mat-option*' tag='SPAN' aaname=' TRIBUNAL REGIONAL FEDERAL DA 1ª REGIÃO ' innertext=' TRIBUNAL REGIONAL FEDERAL DA 1ª REGIÃO ' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6537d680-4f0d-4378-af9b-48a30227c0ec" InformativeScreenshot="7ac0905ac83e09fce73fbeccb12ec6ef" Selector="&lt;webctrl parentid='mat-option*' tag='SPAN' aaname=' TRIBUNAL REGIONAL FEDERAL DA 1ª REGIÃO ' innertext=' TRIBUNAL REGIONAL FEDERAL DA 1ª REGIÃO ' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -347,10 +293,7 @@
                   <If.Then>
                     <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[cpf]">
                       <ui:TypeInto.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="fef0adf9241dc19b9a34642dc7b3a430" Selector="&lt;webctrl tag='INPUT' type='text' aaname='CPF' class='mat-input-element*' id='mat-input*' parentclass='mat-form-field*' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="fef0adf9241dc19b9a34642dc7b3a430" Selector="&lt;webctrl tag='INPUT' type='text' aaname='CPF' class='mat-input-element*' id='mat-input*' parentclass='mat-form-field*' /&gt;" TimeoutMS="10000">
                           <ui:Target.WaitForReady>
                             <InArgument x:TypeArguments="ui:WaitForReady" />
                           </ui:Target.WaitForReady>
@@ -361,10 +304,7 @@
                   <If.Else>
                     <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="True" Text="[cpf]">
                       <ui:TypeInto.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="c7bda68da30fad3a25a127be69303304" Selector="&lt;webctrl tag='INPUT' type='text' aaname='CNPJ' class='mat-input-element*' id='mat-input*' parentclass='mat-form*' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="c7bda68da30fad3a25a127be69303304" Selector="&lt;webctrl tag='INPUT' type='text' aaname='CNPJ' class='mat-input-element*' id='mat-input*' parentclass='mat-form*' /&gt;" TimeoutMS="10000">
                           <ui:Target.WaitForReady>
                             <InArgument x:TypeArguments="ui:WaitForReady" />
                           </ui:Target.WaitForReady>
@@ -385,10 +325,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ba0f021-5670-4a92-acc1-031b8e8280bd" InformativeScreenshot="d62a4be1feb97a52788b3d5dcaf06daf" Selector="&lt;webctrl tag='BUTTON' aaname=' Emitir Certidão ' innertext=' Emitir Certidão ' parentclass='submit' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ba0f021-5670-4a92-acc1-031b8e8280bd" InformativeScreenshot="d62a4be1feb97a52788b3d5dcaf06daf" Selector="&lt;webctrl tag='BUTTON' aaname=' Emitir Certidão ' innertext=' Emitir Certidão ' parentclass='submit' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -396,11 +333,11 @@
                   </ui:Click.Target>
                 </ui:Click>
               </Sequence>
-              <Sequence DisplayName="Subsequence_2" sap:VirtualizedContainerService.HintSize="755,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Subsequence_2" sap:VirtualizedContainerService.HintSize="755,588" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT">
@@ -415,10 +352,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5e0f6a33-e880-4d6e-b58e-9d009520f67e" InformativeScreenshot="ee818f150ad17fd48e8f8caff8623dbe" Selector="&lt;webctrl tag='BUTTON' aaname=' Imprimir ' innertext=' Imprimir ' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5e0f6a33-e880-4d6e-b58e-9d009520f67e" InformativeScreenshot="ee818f150ad17fd48e8f8caff8623dbe" Selector="&lt;webctrl tag='BUTTON' aaname=' Imprimir ' innertext=' Imprimir ' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -444,11 +378,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9688c430-f81e-408a-9e41-b096a81a9ca5" InformativeScreenshot="1e90aa8ecd1dfc5d61af0d1e3c31ab56" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin*' title='*Google Chrome' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='Imprimir' role='push button' /&gt;&lt;ctrl role='grouping' aastate='opaque' idx='*' /&gt;" WaitForReady="COMPLETE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9688c430-f81e-408a-9e41-b096a81a9ca5" InformativeScreenshot="1e90aa8ecd1dfc5d61af0d1e3c31ab56" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin*' title='*Google Chrome' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='Imprimir' role='push button' /&gt;&lt;ctrl role='grouping' aastate='opaque' idx='*' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
                     </ui:Click.Target>
                   </ui:Click>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SalvarPDF workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SalvarPDF.xaml">

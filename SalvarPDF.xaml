@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>733,2259</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>701,2433</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -72,7 +72,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="496,2094" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="496,2268" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="link" />
     </Sequence.Variables>
@@ -94,10 +94,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="711cc7ba-15f9-4106-85e0-7726c2928bf2" InformativeScreenshot="db2d65aff185a201ea46a159a5d7fe16" Selector="&lt;wnd app='explorer.exe' cls='Shell_TrayWnd' idx='*' /&gt;&lt;wnd cls='MSTaskSwWClass' title='Aplicativos em execução' /&gt;&lt;wnd cls='MSTaskListWClass' title='Aplicativos em execução' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="711cc7ba-15f9-4106-85e0-7726c2928bf2" InformativeScreenshot="db2d65aff185a201ea46a159a5d7fe16" Selector="&lt;wnd app='explorer.exe' cls='Shell_TrayWnd' idx='*' /&gt;&lt;wnd cls='MSTaskSwWClass' title='Aplicativos em execução' /&gt;&lt;wnd cls='MSTaskListWClass' title='Aplicativos em execução' /&gt;" TimeoutMS="10000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
@@ -111,10 +108,7 @@
     </ui:Click>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'editable text'" sap:VirtualizedContainerService.HintSize="454,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="abfbf508-9c05-4d69-995f-2c075f9e2ca0" InformativeScreenshot="c14a238c513f554c99514aafa201fa51" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*- Google Chrome' /&gt;&lt;ctrl name='*- Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Barra de endereço e de pesquisa' role='editable text' aastate='focalizável, editable, opaque, selectable text, singleline, autocomplete' text='blob:https://sistemas.trf1.jus.br*' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="abfbf508-9c05-4d69-995f-2c075f9e2ca0" InformativeScreenshot="c14a238c513f554c99514aafa201fa51" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*- Google Chrome' /&gt;&lt;ctrl name='*- Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Barra de endereço e de pesquisa' role='editable text' aastate='focalizável, editable, opaque, selectable text, singleline, autocomplete' text='blob:https://sistemas.trf1.jus.br*' /&gt;" TimeoutMS="10000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
@@ -145,12 +139,12 @@
         <InArgument x:TypeArguments="x:String">[link]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Private: Selecionar Salvar como PDF" sap:VirtualizedContainerService.HintSize="454,1510" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Private: Selecionar Salvar como PDF" sap:VirtualizedContainerService.HintSize="454,1684" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="texto" />
         <Variable x:TypeArguments="x:String" Name="pastaDownload">
           <Variable.Default>
-            <Literal x:TypeArguments="x:String">C:\Users\GLOBALRED 04\Desktop\TesteDownloadCertidoes\CERTIDAO JUDICIAL CIVEL 1 REGIAO DF TRF 1.pdf</Literal>
+            <Literal x:TypeArguments="x:String">CERTIDAO JUDICIAL CIVEL 1 REGIAO DF TRF 1.pdf</Literal>
           </Variable.Default>
         </Variable>
       </Sequence.Variables>
@@ -172,7 +166,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bd5c17cb-c020-4aca-bbf5-fc8434050e2b" InformativeScreenshot="5fd1b8f1495808ad6c33f69ff4cb95cb" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="COMPLETE" />
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bd5c17cb-c020-4aca-bbf5-fc8434050e2b" InformativeScreenshot="5fd1b8f1495808ad6c33f69ff4cb95cb" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]" TimeoutMS="10000" WaitForReady="COMPLETE" />
         </ui:Click.Target>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,11 +176,7 @@
       </ui:Click>
       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
         <ui:GetValue.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0ce9bd5-6ca6-466a-a774-c0635e7be271" InformativeScreenshot="51bbdb5233e4d6e0557933b306f2b85e" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]" WaitForReady="INTERACTIVE">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
-          </ui:Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0ce9bd5-6ca6-466a-a774-c0635e7be271" InformativeScreenshot="51bbdb5233e4d6e0557933b306f2b85e" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
         </ui:GetValue.Target>
         <ui:GetValue.Value>
           <OutArgument x:TypeArguments="x:String">[texto]</OutArgument>
@@ -226,10 +216,7 @@
             </ui:SendHotkey>
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0ce9bd5-6ca6-466a-a774-c0635e7be271" InformativeScreenshot="a01bca2c0735e785e084f359364f2293" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0ce9bd5-6ca6-466a-a774-c0635e7be271" InformativeScreenshot="a01bca2c0735e785e084f359364f2293" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl role='combo box' /&gt;&quot;]" TimeoutMS="10000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
@@ -268,10 +255,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1bef9773-a1c8-4077-af83-6b5f32e5076a" InformativeScreenshot="fae9c58a690c6f733750a224eff8b799" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl name='Salvar' role='push button' aastate='focalizável, opaque' text='Salvar' /&gt;&quot;]">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1bef9773-a1c8-4077-af83-6b5f32e5076a" InformativeScreenshot="fae9c58a690c6f733750a224eff8b799" Selector="[&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='&quot;+link+&quot; - Google Chrome' /&gt;&lt;ctrl name='&quot;+link+&quot;' role='document' /&gt;&lt;ctrl name='Salvar' role='push button' aastate='focalizável, opaque' text='Salvar' /&gt;&quot;]" TimeoutMS="10000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -283,12 +267,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:Click>
-      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBetweenKeys="1" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[pastaDownload]">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBetweenKeys="1" DisplayName="Type Into 'Nome'" EmptyField="True" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[&quot;C:\Users\&quot;+System.Environment.UserName+&quot;\Downloads&quot;+&quot;[k(enter)]&quot;]">
         <ui:TypeInto.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d012b87a-90ea-4305-be6b-9da7e36dc806" InformativeScreenshot="243063106d886c22f7ed3a973b0346ba" Selector="&lt;wnd app='chrome.exe' cls='*' title='Salvar como' /&gt;&lt;wnd aaname='Painel do Explorer' cls='Direct*' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d012b87a-90ea-4305-be6b-9da7e36dc806" InformativeScreenshot="243063106d886c22f7ed3a973b0346ba" Selector="&lt;wnd app='chrome.exe' cls='*' title='Salvar como' /&gt;&lt;wnd aaname='Painel do Explorer' cls='Direct*' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;" TimeoutMS="10000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -300,7 +281,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:TypeInto>
-      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBetweenKeys="1" DisplayName="Type Into 'Nome'" EmptyField="True" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[pastaDownload]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d012b87a-90ea-4305-be6b-9da7e36dc806" InformativeScreenshot="243063106d886c22f7ed3a973b0346ba" Selector="&lt;wnd app='chrome.exe' cls='*' title='Salvar como' /&gt;&lt;wnd aaname='Painel do Explorer' cls='Direct*' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;" TimeoutMS="10000">
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -312,10 +307,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea563a23-1585-4b6a-9ae8-020baaed0eda" InformativeScreenshot="dd476f9391f19aad10b9c806cabbf9c7" Selector="&lt;wnd app='chrome.exe' cls='*' title='Salvar como' /&gt;&lt;wnd ctrlid='*' title='Sa*' aaname='Salvar' cls='Button' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea563a23-1585-4b6a-9ae8-020baaed0eda" InformativeScreenshot="dd476f9391f19aad10b9c806cabbf9c7" Selector="&lt;wnd app='chrome.exe' cls='*' title='Salvar como' /&gt;&lt;wnd ctrlid='*' title='Sa*' aaname='Salvar' cls='Button' /&gt;" TimeoutMS="10000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
