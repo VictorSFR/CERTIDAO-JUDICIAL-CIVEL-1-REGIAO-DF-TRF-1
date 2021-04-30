@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1061,3113</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1061,3136</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GlobalHandler_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -79,23 +79,19 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence steps in during execution when the project encounters an unmanaged error.&#xA;&#xA;Important: Arguments 'errorInfo' and 'result' should not be removed." DisplayName="Global Exception Handler" sap:VirtualizedContainerService.HintSize="1071,2948" sap2010:WorkflowViewState.IdRef="Sequence_4">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="answer" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="retry" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="This sequence steps in during execution when the project encounters an unmanaged error.&#xA;&#xA;Important: Arguments 'errorInfo' and 'result' should not be removed." DisplayName="Global Exception Handler" sap:VirtualizedContainerService.HintSize="1071,2971" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="1029,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[errorInfo.Exception.ToString]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1029,300" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="1029,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[errorInfo.Exception.ToString]" />
+    <TryCatch DisplayName="Try Catch (Verificar Conexão) " sap:VirtualizedContainerService.HintSize="1029,293" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,7 +99,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="PingTest" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="PingTest" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="snn:Ping" Name="png" />
             <Variable x:TypeArguments="snn:PingReply" Name="rply" />
@@ -143,7 +139,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -159,7 +155,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If sap2010:Annotation.AnnotationText="Choose the action to be taken after the Global Exception Handler steps in: &#xA;&#xA;Continue - The exception is re-thrown.&#xA;&#xA;Ignore - The exception is ignored, and the execution continues from the next activity.&#xA;&#xA;Retry - The activity which threw the exception is retried.&#xA;&#xA;Abort - The execution stops after running the current handler." Condition="[errorInfo.RetryCount &lt; 1]" DisplayName="Choose Next Behaviour" sap:VirtualizedContainerService.HintSize="1029,412" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="Choose the action to be taken after the Global Exception Handler steps in: &#xA;&#xA;Continue - The exception is re-thrown.&#xA;&#xA;Ignore - The exception is ignored, and the execution continues from the next activity.&#xA;&#xA;Retry - The activity which threw the exception is retried.&#xA;&#xA;Abort - The execution stops after running the current handler." Condition="[errorInfo.RetryCount &lt; 1]" DisplayName="Choose Next Behaviour" sap:VirtualizedContainerService.HintSize="1029,399" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -176,17 +172,22 @@
         </Assign>
       </If.Then>
     </If>
-    <Sequence sap:VirtualizedContainerService.HintSize="1029,1871" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap:VirtualizedContainerService.HintSize="1029,1919" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[errorInfo.Exception.GetType.ToString]" sap:VirtualizedContainerService.HintSize="987,1779" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Os erros capturados no fluxo Main, irão cair neste Switch, onde cada tipo de erro terá seu tratamento." DisplayName="Switch" Expression="[errorInfo.Exception.GetType.ToString]" sap:VirtualizedContainerService.HintSize="987,1827" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
           <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Houve um erro e não foi possível realizar o processo.&quot;]" />
         </Switch.Default>
-        <Sequence x:Key="UiPath.Core.SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="947,1592" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence x:Key="UiPath.Core.SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="947,1612" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="cpf" />
             <Variable x:TypeArguments="x:Boolean" Name="exists" />
@@ -196,7 +197,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[(errorInfo.Variables(&quot;condicao&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="905,266" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[(errorInfo.Variables(&quot;input&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" DisplayName="If (Verifica erro CPF ou CNPJ)" sap:VirtualizedContainerService.HintSize="905,264" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <ui:UiElementExists DisplayName="Element Exists 'MAT-ERROR  mat-error-3'" Exists="[exists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
@@ -226,15 +227,21 @@
               </ui:UiElementExists>
             </If.Else>
           </If>
-          <If Condition="[exists And Not (errorInfo.Variables(&quot;condicao&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="905,1194" sap2010:WorkflowViewState.IdRef="If_3">
+          <If sap2010:Annotation.AnnotationText="Dependendo do Fluxo, CPF ou CNPJ, a devida sequência será executada." Condition="[exists And Not (errorInfo.Variables(&quot;input&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="905,1216" sap2010:WorkflowViewState.IdRef="If_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,894" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,850" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,242" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="CNPJ" Title="Digite o CNPJ:">
+                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="CNPJ" Title="Digite o CNPJ:">
                   <ui:InputDialog.Result>
                     <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
                   </ui:InputDialog.Result>
@@ -247,7 +254,7 @@
                     <InArgument x:TypeArguments="x:Object">[cpf]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[cpf]">
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[cpf]">
                   <ui:TypeInto.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="c7bda68da30fad3a25a127be69303304" Selector="&lt;html app='chrome.exe' url='*sistemas.trf1.jus.br*' /&gt;&lt;webctrl tag='INPUT' type='text' aaname='CNPJ' class='mat-input-element*' id='mat-input*' parentclass='mat-form*' /&gt;" TimeoutMS="10000">
                       <ui:Target.WaitForReady>
@@ -286,15 +293,21 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <If Condition="[exists And  (errorInfo.Variables(&quot;condicao&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="484,1034" sap2010:WorkflowViewState.IdRef="If_5">
+              <If Condition="[exists And  (errorInfo.Variables(&quot;input&quot;)).ToString.Contains(&quot;Pessoa física&quot;)]" sap:VirtualizedContainerService.HintSize="484,1027" sap2010:WorkflowViewState.IdRef="If_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,854" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,850" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,242" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="CPF" Title="Digite o CPF:">
+                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="CPF" Title="Digite o CPF:">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[cpf]</OutArgument>
                       </ui:InputDialog.Result>
@@ -307,7 +320,7 @@
                         <InArgument x:TypeArguments="x:Object">[cpf]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[cpf]">
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[cpf]">
                       <ui:TypeInto.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f47fa3ff-a770-436f-a1ac-a80798c93062" InformativeScreenshot="c7bda68da30fad3a25a127be69303304" Selector="&lt;html app='chrome.exe' url='*sistemas.trf1.jus.br*' /&gt;&lt;webctrl tag='INPUT' type='text' aaname='CPF' class='mat-input-element*' id='mat-input*' parentclass='mat-form*' /&gt;" TimeoutMS="10000">
                           <ui:Target.WaitForReady>
